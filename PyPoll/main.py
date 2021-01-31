@@ -15,10 +15,8 @@ with open(file_path) as csvfile:
         total_votes = total_votes + 1
         # The winner of the election based on popular vote.
         candidates = row[2]
-        # got_votes = []
-        election["Candidate"] = 0
-        election["Candidate"] = election["Candidate"] + 1
-print(election["Candidate"])
+        got_votes = 0
+print(election["Candidates"].count)
 # A complete list of candidates who received votes
 # The percentage of votes each candidate won
 # The total number of votes each candidate won
