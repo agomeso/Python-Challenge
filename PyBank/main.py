@@ -48,9 +48,9 @@ with open(output_file, "w") as outputFile:
     outputFile.write(f"Total Months: {total_mth}\n")
     outputFile.write(f"Total: ${total_pandl}\n")
     outputFile.write(f"Average Change: ${total_pandl/total_mth}\n")
-    outputfile.write(
+    outputFile.write(
         f"Greatest Increase in Profits: {great_inc['date']} $({great_inc['amount']})\n")
     outputFile.write(
-        f"Greatest Decrease in Profits: {great_dec['date']} $({great_dec['amount']})"\n)
+        f"Greatest Decrease in Profits: {great_dec['date']} $({great_dec['amount']})\n")
     outputFile.write("----------------------------\n")
     outputFile.write("End of Financial Analysis\n")
