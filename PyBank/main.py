@@ -5,7 +5,7 @@ total_pandl = 0.00
 ave_pandl = 0.00
 great_inc = {"date": "", "amount": 0}
 great_dec = {"date": "", "amount": 0}
-
+output_file = "./Analysis/output.txt"
 with open(file_path) as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile)
@@ -34,9 +34,23 @@ print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {total_mth}")
 print(f"Total: ${total_pandl}")
-print(f"Average  Change: ${total_pandl/total_mth}")
+print(f"Average Change: ${total_pandl/total_mth}")
 print(
     f"Greatest Increase in Profits: {great_inc['date']} $({great_inc['amount']})")
 print(
-    f"# Greatest Decrease in Profits: {great_dec['date']} $({great_dec['amount']})")
+    f"Greatest Decrease in Profits: {great_dec['date']} $({great_dec['amount']})")
 print("----------------------------")
+print("End of Financial Analysis")
+
+with open(output_file, "w") as outputfile
+outputfile.write("Financial Analysis")
+outputfile.write("----------------------------")
+outputfile.write(f"Total Months: {total_mth}")
+outputfile.write(f"Total: ${total_pandl}")
+outputfile.write(f"Average Change: ${total_pandl/total_mth}")
+outputfile.write(
+    f"Greatest Increase in Profits: {great_inc['date']} $({great_inc['amount']})")
+outputfile.write(
+    f"Greatest Decrease in Profits: {great_dec['date']} $({great_dec['amount']})")
+outputfile.write("----------------------------")
+outputfile.write("End of Financial Analysis")
