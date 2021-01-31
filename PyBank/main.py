@@ -43,14 +43,14 @@ print("----------------------------")
 print("End of Financial Analysis")
 
 with open(output_file, "w") as outputfile
-outputfile.write("Financial Analysis")
-outputfile.write("----------------------------")
-outputfile.write(f"Total Months: {total_mth}")
-outputfile.write(f"Total: ${total_pandl}")
-outputfile.write(f"Average Change: ${total_pandl/total_mth}")
+outputfile.write("Financial Analysis\n")
+outputfile.write("----------------------------\n")
+outputfile.write(f"Total Months: {total_mth}\n")
+outputfile.write(f"Total: ${total_pandl}\n")
+outputfile.write(f"Average Change: ${total_pandl/total_mth}\n")
 outputfile.write(
-    f"Greatest Increase in Profits: {great_inc['date']} $({great_inc['amount']})")
+    f"Greatest Increase in Profits: {great_inc['date']} $({great_inc['amount']})\n")
 outputfile.write(
-    f"Greatest Decrease in Profits: {great_dec['date']} $({great_dec['amount']})")
-outputfile.write("----------------------------")
-outputfile.write("End of Financial Analysis")
+    f"Greatest Decrease in Profits: {great_dec['date']} $({great_dec['amount']})"\n)
+outputfile.write("----------------------------\n")
+outputfile.write("End of Financial Analysis\n")
