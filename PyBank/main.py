@@ -34,7 +34,7 @@ print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {total_mth}")
 print(f"Total: ${total_pandl}")
-print(f"Average  Change: ${total_mth/total_pandl}")
+print(f"Average  Change: ${total_pandl/total_mth}")
 print(
     f"Greatest Increase in Profits: {great_inc['date']} $({great_inc['amount']})")
 print(f"# Greatest Decrease in Profits: Sep-2013 ($-2196167)")
