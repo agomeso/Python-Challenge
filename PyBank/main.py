@@ -26,9 +26,9 @@ with open(file_path) as csvfile:
             great_inc["date"] = date
             great_inc["amount"] = profit
         # The greatest decrease in losses(date and amount) over the entire period
-        # if (row[0].lower() == user_movie.lower()):
-        #    print(f"{row[ 0 ]} is rated {row[rating]} with a rating of {row[5]}")
-
+        if (profit < great_dec["amount"]):
+            great_dec["date"] = date
+            great_dec["amount"] = profit
 
 print("Financial Analysis")
 print("----------------------------")
@@ -37,4 +37,6 @@ print(f"Total: ${total_pandl}")
 print(f"Average  Change: ${total_pandl/total_mth}")
 print(
     f"Greatest Increase in Profits: {great_inc['date']} $({great_inc['amount']})")
-print(f"# Greatest Decrease in Profits: Sep-2013 ($-2196167)")
+print(
+    f"# Greatest Decrease in Profits: {great_dec['date']} $({great_dec['amount']})")
+print("----------------------------")
