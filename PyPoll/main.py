@@ -2,12 +2,8 @@ import csv
 file_path = "./Resources/election_data.csv"
 total_votes = 0
 election = {"Voter ID": "", "County": "", "Candidate": ""}
-got_votes = {"Name": [], "Total": []}
-Khan = 0
-Correy = 0
-Li = 0
-OTooley = 0
-Winner = 0
+got_votes = {}
+
 with open(file_path) as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile)
@@ -18,39 +14,30 @@ with open(file_path) as csvfile:
     for row in csvreader:
         # The total number of votes cast
         total_votes = total_votes + 1
-
-        # If the candidate is not in the list append and add 1 ELSE add 1
         candidates = row[2]
-        # A complete list of candidates who received votes
-        if candidates not in got_votes["Name"]:
-            got_votes["Name"].append(candidates)
-        # The total number of votes each candidate won
-        if (candidates == "Khan"):
-            Khan = Khan + 1
-        if (candidates == "Correy"):
-            Correy = Correy + 1
-        if (candidates == "Li"):
-            Li = Li + 1
-        if (candidates == "O'Tooley"):
-            OTooley = OTooley + 1
-        # The winner of the election based on popular vote.
-
-# print(got_votes["Name"])
-
-# # The percentage of votes each candidate won
-# print(f"{got_votes['Name'][1]}")
+        lis = candidates.split()
+        # print(lis)
+        for c in lis:
+           # print(c)
+            if c in got_votes:
+                got_votes[c] = got_votes[c] + 1
+            else:
+                got_votes[c] = 1
+    # print('Khan', got_votes['Khan'])
+    print(got_votes)
 
 print("Election Results")
 print("-------------------------")
 print(f"Total Votes: {total_votes}")
 print("-------------------------")
 print(
-    f"{got_votes['Name'][0]}: {round(float(Khan/total_votes*100),5)}% ({Khan})")
+    f"Khan: {round(float(got_votes['Khan']/total_votes*100),5)}% ({got_votes['Khan']})")
 print(
-    f"{got_votes['Name'][1]}: {round(float(Correy/total_votes*100),5)}% ({Correy})")
-print(f"{got_votes['Name'][2]}: {round(float(Li/total_votes*100),5)}% ({Li})")
+    f"Correy: {round(float(got_votes['Correy']/total_votes*100),5)}% ({got_votes['Correy']})")
 print(
-    f"{got_votes['Name'][3]}: {round(float(OTooley/total_votes*100),5)}% ({OTooley})")
+    f"Li: {round(float(got_votes['Li']/total_votes*100),5)}% ({got_votes['Li']})")
+# print(
+#     f"OTooley: {round(float(got_votes['OTooley']/total_votes*100),5)}% ({got_votes['OTooley']})")
 print("-------------------------")
 print("Winner: Khan")
 print("-------------------------")
