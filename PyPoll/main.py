@@ -23,26 +23,31 @@ with open(file_path) as csvfile:
                 got_votes[c] = got_votes[c] + 1
             else:
                 got_votes[c] = 1
-    # print('Khan', got_votes['Khan'])
-    print(got_votes)
+    # A complete list of candidates who received votes
+        # print(got_votes)
+        # print('Khan', got_votes['Khan'])
+
+# The winner of the election based on popular vote.
 winner = 0
 for key, value in got_votes.items():
     if winner < value:
         winner = value
         elected = key
-print(elected)
+# print(elected)
+# get rid of the ' on O'Tooley
+o = str("O'Tooley")
 print("Election Results")
 print("-------------------------")
 print(f"Total Votes: {total_votes}")
 print("-------------------------")
 print(
-    f"Khan: {str(round(float(got_votes['Khan']/total_votes*100),5))}% ({got_votes['Khan']})")
+    f"Khan: {str(round(got_votes['Khan']/total_votes*100,5))}% ({got_votes['Khan']})")
 print(
     f"Correy: {round(float(got_votes['Correy']/total_votes*100),5)}% ({got_votes['Correy']})")
 print(
     f"Li: {round(float(got_votes['Li']/total_votes*100),5)}% ({got_votes['Li']})")
-# print(
-#     f"OTooley: {round(float(got_votes['OTooley']/total_votes*100),5)}% ({got_votes['OTooley']})")
+print(
+    f"O'Tooley: {round(float(got_votes[o]/total_votes*100),5)}% ({got_votes[o]})")
 print("-------------------------")
-print("Winner: ")
+print(f"Winner: {elected}")
 print("-------------------------")
